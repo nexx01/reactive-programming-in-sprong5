@@ -17,19 +17,26 @@ repositories {
 
 ext {
     reactorVersion = '3.2.0.RELEASE'
+    reactorExtraVersion = '3.2.0.RELEASE'
 }
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter')
-
+    implementation('org.springframework.boot:spring-boot-autoconfigure')
+    implementation('org.springframework.boot:spring-boot-starter-webflux')
+    implementation('org.springframework.boot:spring-boot-starter-actuator')
+    implementation('org.springframework.security:spring-security-core')
     implementation("io.projectreactor:reactor-core:${reactorVersion}")
     implementation("io.projectreactor:reactor-test:${reactorVersion}")
 
+    implementation('io.projectreactor:reactor-core:3.4.21')
     implementation('org.projectlombok:lombok')
+    implementation("io.projectreactor.addons:reactor-extra:${reactorExtraVersion}")
 
     implementation('org.springframework.boot:spring-boot-starter-test')
     testCompileOnly 'org.projectlombok:lombok:1.18.26'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testCompileOnly('io.projectreactor:reactor-test')
 }
 
 tasks.named('test') {
