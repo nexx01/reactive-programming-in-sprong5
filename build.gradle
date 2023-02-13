@@ -33,6 +33,9 @@ dependencies {
     implementation('org.projectlombok:lombok')
     implementation("io.projectreactor.addons:reactor-extra:${reactorExtraVersion}")
 
+    // In-memory DB for demonstration purposes
+    implementation('com.h2database:h2')
+
     implementation('org.springframework.boot:spring-boot-starter-test')
     testCompileOnly 'org.projectlombok:lombok:1.18.26'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
